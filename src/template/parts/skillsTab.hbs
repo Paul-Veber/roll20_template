@@ -1,0 +1,64 @@
+{{#*inline "skillsTab"}}
+<div class="sheet-skill section bg-black4 rounded-xl border-2 border-gray m-3 p-4">
+    <h2>compétences</h2>
+    <div class="grid grid-cols-3 gap-4">
+        <h3>Nom</h3>
+        <h3>Niv</h3>
+        <h3>test</h3>
+    </div>
+    <div class="">
+        {{#each skills as |skill|}}
+        <div class="grid grid-cols-3 gap-4">
+            <button name="roll_{{skill.en}}" type="roll" class="skill roll btn"
+                value="{{> rollMacro name=skill.fr prefix="characteristic" modifier=skill.eng}}">
+                {{skill.fr}}</button>
+            <input type="number" name="attr_pilot" value="0" min="0" />
+            <select name="attr_characteristic{{skill.eng}}">
+                {{#each ../characteristics as |charac|}}
+                <option value="@{ {{~charac.eng}}} + @{ {{~skill.eng}}}">{{charac.fr}}</option>
+                {{/each}}
+            </select>
+        </div>
+        {{/each}}
+    </div>
+</div>
+<div class="description section">
+    <h3>Spécialisation</h3>
+    <fieldset class="repeating_specialisation">
+        <div class="section">
+            <input type="text" class="inputText" name="attr_speName0" placeholder="vigilance" />
+            <input type="text" class="inputText" name="attr_speName1" placeholder="combat à main nue" />
+            <input type="text" class="inputText" name="attr_speName2" placeholder="Ingénierie naval" />
+        </div>
+    </fieldset>
+</div>
+<div class="sheet-extra section">
+    <h2>Extra</h2>
+    <div class="sheet-label">
+        <div>
+            <span>Nom</span>
+        </div>
+        <div>
+            <span>Succès</span>
+        </div>
+        <div>
+            <span>Effet</span>
+        </div>
+    </div>
+    <fieldset class="repeating_extra">
+        <div class="section">
+            <input type="text" class="inputText" name="attr_extraName" placeholder="épée" />
+            <input type="number" class="success" name="attr_extraSuccess" value="0" min="0" />
+            <input type="text" name="attr_extraSpe" placeholder="allonge" />
+            <label class="sheet-extraDescrionChecked pointer">
+                <input type="checkbox" name="attr_extraDescriptionShow" class="sheet-extraDescriptionShow">
+                <span class="sheet-descriptionUnchecked">► description</span>
+                <span class="sheet-descriptionchecked">▼ description</span>
+                <div class="sheet-toggle-show">
+                    <textarea name="attr_extraDescription" cols="5" rows="5"></textarea>
+                </div>
+            </label>
+        </div>
+    </fieldset>
+</div>
+{{/inline}}

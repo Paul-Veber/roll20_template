@@ -1,3 +1,108 @@
 {
-    "test":"bla"
+    "base_roll": "d10>7",
+    "tabs": [
+        {
+            "eng": "character",
+            "fr": "Personnage"
+        },
+        {
+            "eng": "background",
+            "fr": "Historique et Information"
+        },
+        {
+            "eng": "advancement",
+            "fr": "Avancement"
+        },
+        {
+            "eng": "transport",
+            "fr": "Transport et Animaux"
+        }
+    ],
+    "characterInfos": [
+        {
+            "span": "Age",
+            "type": "number",
+            "name": "Age",
+            "placeholder": "24",
+            "min": "0"
+        },
+        {
+            "span": "Race",
+            "type": "number",
+            "name": "Race",
+            "placeholder": "Alien"
+        },
+        {
+            "span": "Origine",
+            "type": "text",
+            "name": "Origine",
+            "placeholder": "Osaka"
+        },
+        {
+            "span": "Historique",
+            "type": "text",
+            "name": "Background",
+            "placeholder": "ninja de la feuille de papier"
+        }
+    ],
+    "characteristics": [
+        {
+            "eng": "vigour",
+            "fr": "Vigueur"
+        },
+        {
+            "eng": "agility",
+            "fr": "Agilité"
+        },
+        {
+            "eng": "inteligence",
+            "fr": "Intel"
+        },
+        {
+            "eng": "spirit",
+            "fr": "Esprit"
+        }
+    ],
+    "skills": [
+        {
+            "eng": "pilot",
+            "fr": "Piloter"
+        },
+        {
+            "eng": "tinker",
+            "fr": "Bidouiller"
+        },
+        {
+            "eng": "convince",
+            "fr": "Convaincre"
+        },
+        {
+            "eng": "Charisme",
+            "fr": "Charisme"
+        },
+        {
+            "eng": "force",
+            "fr": "Forcer"
+        },
+        {
+            "eng": "endure",
+            "fr": "Endurer"
+        },
+        {
+            "eng": "move",
+            "fr": "Se Mouvoire"
+        },
+        {
+            "eng": "will",
+            "fr": "Volonté"
+        },
+        {
+            "eng": "perceive",
+            "fr": "Percevoir"
+        },
+        {
+            "eng": "study",
+            "fr": "Étudier"
+        }
+    ]
 }

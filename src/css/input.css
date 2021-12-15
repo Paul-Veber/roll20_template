@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .skill {
+        @apply py-2 px-4 text-gray bg-auto bg-red bg-none font-semibold rounded-md shadow-md hover:outline-none hover:bg-blue hover:ring-2 hover:ring-opacity-75;
+    }
+
+    .repcontrol_add,
+    .repcontrol_edit {
+        @apply py-2 px-4 text-gray bg-auto bg-green bg-none font-semibold rounded-full shadow-md hover:outline-none hover:bg-green hover:ring-2 hover:ring-opacity-75;
+    }
+
+    .repcontainer[data-groupname="repeating_traits"] {
+        @apply grid grid-cols-3 gap-2 mb-4
+    }
+}
+
+.border-1 {
+    border-width: 1px;
+}
+
+.sheet-character,
+.sheet-background,
+.sheet-advancement,
+.sheet-transport,
+.sheet-equipment {
+    display: none;
+}
+
+/* show the selected tab */
+.sheet-tabstoggle[value="character"] ~ div.sheet-character,
+.sheet-tabstoggle[value="background"] ~ div.sheet-background,
+.sheet-tabstoggle[value="advancement"] ~ div.sheet-advancement,
+.sheet-tabstoggle[value="transport"] ~ div.sheet-transport
+{
+	display: block;
+}
+
+.sheet{
+    background: url("https://i.ibb.co/31XR7c6/other-Background.jpg") repeat;
+    min-width: 746px;
+}
+
+input,
+input[disabled],
+textarea {
+    background-color: #D7DAE0;
+}
+
+h2,
+h3,
+h4,
+input,
+span {
+    color: #9DDDCB;
+}

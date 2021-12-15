@@ -1,0 +1,9 @@
+{{#*inline "tabs"}}
+<div class="flex flex-row justify-between my-5 p-4 bg-black5 rounded-xl border-2 border-blue">
+    {{#each tabs}}
+    <button type="action"
+        class="w-5/6 bg-magenta text-black5 py-4 px-6 mx-4 rounded-xl border-2 border-pink hover:bg-pink hover:text-black3 hover:border-2 hover:border-magenta"
+        name="act_{{this.eng}}" value="{{this.eng}}">{{this.fr}}</button>
+    {{/each}}
+</div>
+{{/inline}}

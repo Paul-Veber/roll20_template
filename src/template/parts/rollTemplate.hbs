@@ -1,0 +1,23 @@
+{{#*inline "rollTemplate"}}
+<rolltemplate class="sheet-rolltemplate-HC">
+  <div class="sheet-template-container">
+    <div class="sheet-template-header">
+      <h2>\{{name}}</h2>
+    </div>
+    \{{#skill}}
+    <div class="sheet-template-row">
+      <h3>Réussite</h3>
+      <p>\{{skill}}</p>
+      \{{#max}}
+      <h4>Réussite Maximum : \{{max}}</h4>
+      \{{/max}}
+    </div>
+    \{{/skill}}
+    \{{#bonus}}
+    <div>
+      <h3>Dés Bonus</h3>
+      <p>\{{bonus}}</p>
+    </div>
+    \{{/bonus}}
+</rolltemplate>
+{{/inline}}

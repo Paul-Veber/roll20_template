@@ -1,0 +1,11 @@
+{
+    "partials": [
+        "parts/partTabs.hbs",
+        "parts/ressources.hbs",
+        "parts/skillsTab.hbs",
+        "parts/rollTemplate.hbs",
+        "parts/infosBar.hbs",
+        "components/rollMacro.hbs",
+        "script/script.hbs"
+    ]
+}

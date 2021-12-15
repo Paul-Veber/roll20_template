@@ -1,0 +1,44 @@
+{{#*inline "ressources"}}
+<div class="sheet-ressources section border-t-2 border-blue mb-4">
+    <h2>Ressources</h2>
+    <div class="flex flex-row justify-around">
+        <div class="sheet-physique section">
+            <h3>Physique</h3>
+            <div class="">
+                <input type="number" name="attr_actualPh" min="-5" />
+                <input type="number" name="attr_maxPh" value="(@{vigour}+@{spirit})*2)+@{endure}" disabled="true" />
+            </div>
+        </div>
+        <div class="justify-center">
+            <h3>Points Nekketsu</h3>
+            <div>
+                <input type="number" name="attr_actualNKT" min="0" />
+            </div>
+        </div>
+    </div>
+</div>
+{{!--traits section--}}
+<div class="border-t-2 border-blue mb-4">
+    <h2>Traits</h2>
+    <div >
+        <fieldset class="repeating_traits">
+            <div>
+                <input type="checkbox" class="checkUtilisation" name="attr_traitsUtilisation" />
+                <input type="text" class="traits" name="attr_traits" />
+            </div>
+        </fieldset>
+    </div>
+</div>
+{{!--characteristics section--}}
+<div class="border-t-2 border-blue mb-4">
+    <h2 class="mx-auto">caractéristiques</h2>
+    <div class="flex flex-row justify-around">
+        {{#each characteristics}}
+        <div class="border-double rounded-full border-2 border-red p-5 bg-black5">
+            <h4>{{this.fr}}</h4>
+            <input type="number" name="attr_{{this.eng}}" value="0" min="0" />
+        </div>
+        {{/each}}
+    </div>
+</div>
+{{/inline}}

@@ -1,0 +1,14 @@
+{{#*inline "script"}}
+<script type="text/worker">
+    var buttonlist = ["character","equipment","background","advancement","transport"];
+    buttonlist.forEach(button => {
+      on('clicked:' + button, function() {
+        setAttrs({
+          "sheetTab": button
+        });
+      });
+    });
+
+
+</script>
+{{/inline}}

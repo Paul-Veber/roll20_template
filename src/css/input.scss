@@ -1,7 +1,51 @@
-$font-stack:    Helvetica, sans-serif;
+$font-stack: Helvetica, sans-serif;
 $primary-color: #333;
 
-body {
-  font: 100% $font-stack;
-  color: $primary-color;
+.sheet-main {
+    width: 800px;
+}
+
+.sheet-character,
+.sheet-background,
+.sheet-advancement,
+.sheet-transport,
+.sheet-equipment {
+    display: none;
+}
+
+/* show the selected tab */
+.sheet-tabstoggle[value="character"] ~ div.sheet-character,
+.sheet-tabstoggle[value="background"] ~ div.sheet-background,
+.sheet-tabstoggle[value="advancement"] ~ div.sheet-advancement,
+.sheet-tabstoggle[value="transport"] ~ div.sheet-transport
+{
+	display: block;
+}
+
+.sheet-tabsContainer {
+    width: 800px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+}
+
+/* text */
+
+::placeholder {
+    opacity: 0.6;
+}
+
+textarea {
+    width: 700px;
+}
+
+/* writing */
+p,
+span,
+h1,
+h2,
+h3,
+h4
+{
+  color: black;
 }

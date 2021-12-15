@@ -1,12 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>test</title>
-</head>
-<body>
-    <h1>{{test}}</h1>
-</body>
-</html>
+<div class="sheet container mx-auto text-teal">
+    <div class="w-fit mx-auto">
+        <img class="p-5" src="https://i.ibb.co/gZcWm2w/ddemini.png" alt="logos" border="0">
+    </div>
+    {{!-- character infos section --}}
+    {{>infoBar}} 
+    {{!-- tabs --}}
+    {{> tabs}}
+    <input type='hidden' class='tabstoggle' name='attr_sheetTab' value='character' />
+    {{!-- character sheet --}}
+    <div class="character">
+        <div class="skills">
+            {{> skillsTab}}
+        </div>
+    </div>
+</div>
+{{> rollTemplate}}
+{{> script}}
+<div class=" hidden repcontrol_add btn repcontainer" data-groupname="repeating_traits"></div>

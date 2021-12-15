@@ -1,0 +1,23 @@
+{{#*inline "infoBar"}}
+<div class="sheet-infoBar section bg-black4 rounded-xl border-2 border-gray m-3 p-4">
+    <div class=" bg-black5 rounded-xl border-2 border-pink grid grid-cols-2">
+        <img class="sheet-avatar w-2/5 p-1" name="attr_character_avatar">
+        <div class="self-center pb-4">
+            <span class="pr-4">Nom</span>
+            <input class="" type="text" name="attr_character_name" />
+        </div>
+    </div>
+    <div class="grid grid-cols-4 m-4">
+        {{#each characterInfos}}
+        <div class="">
+            <span class="">{{this.span}}</span>
+            <input class="w-1/2" type="{{this.type}}" name="attr_character{{this.name}}"
+                placeholder="{{this.placeholder}}" {{~#if this.min}} min="{{this.min}}" {{~/if~}} />
+        </div>
+        {{/each}}
+    </div>
+    <div class="flex flex flex-col justify-center">
+        {{> ressources}}
+    </div>
+</div>
+{{/inline}}
