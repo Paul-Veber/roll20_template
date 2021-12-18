@@ -6,16 +6,16 @@
             "fr": "Personnage"
         },
         {
+            "eng": "equipment",
+            "fr": "Equipement"
+        },
+        {
             "eng": "background",
             "fr": "Historique et Information"
         },
         {
             "eng": "advancement",
             "fr": "Avancement"
-        },
-        {
-            "eng": "transport",
-            "fr": "Transport et Animaux"
         }
     ],
     "characterInfos": [
@@ -83,6 +83,10 @@
         {
             "eng": "force",
             "fr": "Forcer"
+        },
+        {
+            "eng": "dexterity",
+            "fr": "Finesse"
         },
         {
             "eng": "endure",

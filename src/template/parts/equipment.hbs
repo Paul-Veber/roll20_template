@@ -1,0 +1,59 @@
+{{#*inline "equipment"}}
+<div class="equipment section bg-black4 rounded-xl border-2 border-gray m-3 p-4 ">
+    <!--Armor section-->
+    <div class="sheet-extra section my-4">
+        <h2>Extra</h2>
+        <div class="grid grid-cols-3 gap-4">
+            <div>
+                <span>Nom</span>
+            </div>
+            <div>
+                <span>Succès</span>
+            </div>
+            <div>
+                <span>Effet</span>
+            </div>
+        </div>
+        <fieldset class="repeating_extra">
+            <div class="section">
+                <div class="grid grid-cols-3 gap-3">
+                    <input type="text" class="inputText" name="attr_extraName" placeholder="épée" />
+                    <input type="number" class="success" name="attr_extraSuccess" value="0" min="0" />
+                    <input type="text" name="attr_extraSpe" placeholder="allonge" />
+                </div>
+                <label class="sheet-extraDescrionChecked pointer">
+                    <input type="checkbox" name="attr_extraDescriptionShow" class="sheet-extraDescriptionShow">
+                    <span class="sheet-descriptionUnchecked">► description</span>
+                    <span class="sheet-descriptionchecked">▼ description</span>
+                    <div class="sheet-toggle-show">
+                        <textarea name="attr_extraDescription" cols="5" rows="5"></textarea>
+                    </div>
+                </label>
+            </div>
+        </fieldset>
+    </div>
+    <div class="armor section border-t-2 border-blue my-4">
+        <h2>Protection</h2>
+        <div class="armor">
+            <h3>Armure</h3>
+            <span>Nom:</span>
+            <input type="text" name="attr_armorName" placeholder="brigandine">
+            <span>Protection:</span>
+            <input type="number" name="attr_armorValue" value="0" min="0">
+            <span>Particularité:</span>
+            <input type="text" name="attr_armorParticularity" placeholder="lourde">
+        </div>
+    </div>
+    <!--stuffs section-->
+    <div class="stuffs section py-2 border-t-2 border-blue my-4">
+        <h2 class="title">Inventaire</button>
+            <div class="ressourcePoints section pb-4">
+                <button type="roll" class="rollRessourcePoints" name="roll_ressourcePoints" class="ressourcePoints roll"
+                    value="&{template:HC} \{{name=Acquisition}} \{{skill=[[(@{ressourcePoints}+?{autres bonus|0}d10>6cs>9)+?{dépense}]]}}">points
+                    de ressources</button>
+                <input type="number" name="attr_ressourcePoints">
+            </div>
+            <textarea name="attr_stuffs" cols="30" rows="10"></textarea>
+    </div>
+</div>
+{{/inline}}

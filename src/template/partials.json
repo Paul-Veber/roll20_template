@@ -5,6 +5,9 @@
         "parts/skillsTab.hbs",
         "parts/rollTemplate.hbs",
         "parts/infosBar.hbs",
+        "parts/equipment.hbs",
+        "parts/background.hbs",
+        "parts/advancement.hbs",
         "components/rollMacro.hbs",
         "script/script.hbs"
     ]

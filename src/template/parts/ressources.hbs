@@ -6,7 +6,7 @@
             <h3>Physique</h3>
             <div class="">
                 <input type="number" name="attr_actualPh" min="-5" />
-                <input type="number" name="attr_maxPh" value="(@{vigour}+@{spirit})*2)+@{endure}" disabled="true" />
+                <input type="number" name="attr_maxPh" value="ceil(@{vigour}+@{spirit})/2)" disabled="true" />
             </div>
         </div>
         <div class="justify-center">
@@ -19,12 +19,22 @@
 </div>
 {{!--traits section--}}
 <div class="border-t-2 border-blue mb-4">
-    <h2>Traits</h2>
+    <h2>Traits Positifs</h2>
     <div >
         <fieldset class="repeating_traits">
             <div>
                 <input type="checkbox" class="checkUtilisation" name="attr_traitsUtilisation" />
-                <input type="text" class="traits" name="attr_traits" />
+                <input type="text" class="traits" name="attr_traitsPos" />
+            </div>
+        </fieldset>
+    </div>
+</div>
+<div class="border-t-2 mb-4">
+    <h2>Traits Négatifs</h2>
+    <div >
+        <fieldset class="repeating_traits">
+            <div>
+                <input type="text" class="traits" name="attr_traitsNeg" />
             </div>
         </fieldset>
     </div>
@@ -34,7 +44,7 @@
     <h2 class="mx-auto">caractéristiques</h2>
     <div class="flex flex-row justify-around">
         {{#each characteristics}}
-        <div class="border-double rounded-full border-2 border-red p-5 bg-black5">
+        <div class="border-double rounded-full p-5 bg-black5">
             <h4>{{this.fr}}</h4>
             <input type="number" name="attr_{{this.eng}}" value="0" min="0" />
         </div>

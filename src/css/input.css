@@ -3,56 +3,113 @@
 @tailwind utilities;
 
 @layer components {
-    .skill {
-        @apply py-2 px-4 text-gray bg-auto bg-red bg-none font-semibold rounded-md shadow-md hover:outline-none hover:bg-blue hover:ring-2 hover:ring-opacity-75;
-    }
+  .skill {
+    @apply py-2 px-4 text-gray bg-auto bg-red bg-none font-semibold rounded-md shadow-md hover:outline-none hover:bg-blue hover:ring-2 hover:ring-opacity-75;
+  }
 
-    .repcontrol_add,
-    .repcontrol_edit {
-        @apply py-2 px-4 text-gray bg-auto bg-green bg-none font-semibold rounded-full shadow-md hover:outline-none hover:bg-green hover:ring-2 hover:ring-opacity-75;
-    }
+  .repcontrol_add,
+  .repcontrol_edit {
+    @apply py-2 px-4 text-gray bg-auto bg-green bg-none font-semibold rounded-full shadow-md hover:outline-none hover:bg-green hover:ring-2 hover:ring-opacity-75;
+  }
 
-    .repcontainer[data-groupname="repeating_traits"] {
-        @apply grid grid-cols-3 gap-2 mb-4
-    }
+  .repcontainer[data-groupname="repeating_traits"] {
+    @apply grid grid-cols-3 gap-2 mb-4;
+  }
+
+  .repcontainer[data-groupname="repeating_capacity"] > .section {
+    @apply grid grid-cols-3 gap-2 mb-4;
+  }
 }
 
 .border-1 {
-    border-width: 1px;
+  border-width: 1px;
 }
 
-.sheet-character,
-.sheet-background,
-.sheet-advancement,
-.sheet-transport,
-.sheet-equipment {
-    display: none;
+.character,
+.background,
+.advancement,
+.transport,
+.equipment {
+  display: none;
 }
 
 /* show the selected tab */
-.sheet-tabstoggle[value="character"] ~ div.sheet-character,
-.sheet-tabstoggle[value="background"] ~ div.sheet-background,
-.sheet-tabstoggle[value="advancement"] ~ div.sheet-advancement,
-.sheet-tabstoggle[value="transport"] ~ div.sheet-transport
-{
-	display: block;
+.tabstoggle[value="character"] ~ div.character,
+.tabstoggle[value="background"] ~ div.background,
+.tabstoggle[value="advancement"] ~ div.advancement,
+.tabstoggle[value="equipment"] ~ div.equipment {
+  display: block;
 }
 
-.sheet{
-    background: url("https://i.ibb.co/31XR7c6/other-Background.jpg") repeat;
-    min-width: 746px;
+/* extra description hide/show */
+.sheet-extraDescriptionShow,
+.sheet-transportDescriptionShow,
+.sheet-particularitiesDescriptionShow {
+  opacity: 0;
+  width: 16px;
+  height: 16px;
+  position: relative;
+  top: 5px;
+  left: 6px;
+  margin: -10px;
+  z-index: 1;
+}
+
+/* Fake checkbox */
+
+.sheet-extraDescriptionShow,
+.sheet-particularitiesDescriptionShow,
+.sheet-transportDescriptionShow,
+.sheet-capacityDescriptionShow {
+  display: none;
+}
+
+input.sheet-extraDescriptionShow:checked ~ span.sheet-descriptionUnchecked,
+input.sheet-particularitiesDescriptionShow:checked
+  ~ span.sheet-descriptionUnchecked,
+input.sheet-transportDescriptionShow:checked ~ span.sheet-descriptionUnchecked,
+input.sheet-capacityDescriptionShow:checked ~ span.sheet-descriptionUnchecked {
+  display: none;
+}
+
+input.sheet-extraDescriptionShow:not(:checked) ~ span.sheet-descriptionchecked,
+input.sheet-particularitiesDescriptionShow:not(:checked)
+  ~ span.sheet-descriptionchecked,
+input.sheet-transportDescriptionShow:not(:checked)
+  ~ span.sheet-descriptionchecked,
+input.sheet-capacityDescriptionShow:not(:checked)
+  ~ span.sheet-descriptionchecked {
+  display: none;
+}
+
+input.sheet-extraDescriptionShow:not(:checked) ~ div.sheet-toggle-show,
+input.sheet-particularitiesDescriptionShow:not(:checked)
+  ~ div.sheet-toggle-show,
+input.sheet-transportDescriptionShow:not(:checked) ~ div.sheet-toggle-show,
+input.sheet-capacityDescriptionShow:not(:checked) ~ div.sheet-toggle-show {
+  display: none;
+}
+
+.sheet {
+  background: url("https://i.ibb.co/31XR7c6/other-Background.jpg") repeat;
+  min-width: 746px;
 }
 
 input,
 input[disabled],
 textarea {
-    background-color: #D7DAE0;
+  background-color: #d7dae0;
 }
 
 h2,
 h3,
 h4,
-input,
 span {
-    color: #9DDDCB;
+  color: #9dddcb;
+}
+
+input,
+select,
+textarea {
+  color: #2d293b;
 }

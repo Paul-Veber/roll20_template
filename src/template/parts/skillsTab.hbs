@@ -9,10 +9,10 @@
     <div class="">
         {{#each skills as |skill|}}
         <div class="grid grid-cols-3 gap-4">
-            <button name="roll_{{skill.en}}" type="roll" class="skill roll btn"
+            <button name="roll_{{skill.eng}}" type="roll" class="skill roll btn"
                 value="{{> rollMacro name=skill.fr prefix="characteristic" modifier=skill.eng}}">
                 {{skill.fr}}</button>
-            <input type="number" name="attr_pilot" value="0" min="0" />
+            <input type="number" name="attr_{{skill.eng}}" value="0" min="0" />
             <select name="attr_characteristic{{skill.eng}}">
                 {{#each ../characteristics as |charac|}}
                 <option value="@{ {{~charac.eng}}} + @{ {{~skill.eng}}}">{{charac.fr}}</option>
@@ -22,7 +22,7 @@
         {{/each}}
     </div>
 </div>
-<div class="description section">
+<div class="description section bg-black4 rounded-xl border-2 border-gray m-3 p-4">
     <h3>Spécialisation</h3>
     <fieldset class="repeating_specialisation">
         <div class="section">
@@ -32,30 +32,31 @@
         </div>
     </fieldset>
 </div>
-<div class="sheet-extra section">
-    <h2>Extra</h2>
-    <div class="sheet-label">
+<!-- capacity section -->
+<div class="sheet-extra section bg-black4 rounded-xl border-2 border-gray m-3 p-4">
+    <h2>Capacité Spéciale</h2>
+    <div class="sheet-label grid grid-cols-4 gap-4">
         <div>
             <span>Nom</span>
         </div>
         <div>
-            <span>Succès</span>
+            <span>Bonus</span>
         </div>
         <div>
-            <span>Effet</span>
+            <span>Effets</span>
         </div>
     </div>
-    <fieldset class="repeating_extra">
+    <fieldset class="repeating_capacity">
         <div class="section">
-            <input type="text" class="inputText" name="attr_extraName" placeholder="épée" />
-            <input type="number" class="success" name="attr_extraSuccess" value="0" min="0" />
-            <input type="text" name="attr_extraSpe" placeholder="allonge" />
-            <label class="sheet-extraDescrionChecked pointer">
-                <input type="checkbox" name="attr_extraDescriptionShow" class="sheet-extraDescriptionShow">
+            <input type="text" class="inputText" name="attr_capacityName" placeholder="Magical Girl" />
+            <input type="number" class="success" name="attr_capacitySuccess" value="0" min="0" />
+            <input type="text" name="attr_capacitySpe" placeholder="voler" />
+            <label class="sheet-capacityDescrionChecked pointer">
+                <input type="checkbox" name="attr_capacityDescriptionShow" class="sheet-capacityDescriptionShow">
                 <span class="sheet-descriptionUnchecked">► description</span>
                 <span class="sheet-descriptionchecked">▼ description</span>
                 <div class="sheet-toggle-show">
-                    <textarea name="attr_extraDescription" cols="5" rows="5"></textarea>
+                    <textarea name="attr_capacityDescription" cols="5" rows="5"></textarea>
                 </div>
             </label>
         </div>
